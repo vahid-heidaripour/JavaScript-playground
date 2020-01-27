@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript String Methods</h2>
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+<p id="demo6"></p>
+<p id="demo7"></p>
+<p id="demo8"></p>
+
+<script>
+    var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var sln = txt.length;
+    document.getElementById('demo').innerHTML =
+        sln;
+
+    var str = "Please locate where 'locate' occurs!";
+    var pos = str.indexOf("locate");
+    document.getElementById('demo1').innerHTML =
+        pos;
+
+    var lastPos = str.lastIndexOf("locate");
+    document.getElementById('demo2').innerHTML =
+        lastPos;
+
+    //Both indexOf(), and lastIndexOf() return -1 if the text is not found.
+
+    var searchPos = str.search("locate");
+    document.getElementById('demo3').innerHTML =
+        searchPos;
+
+    str = "Apple, Banana, Kiwi";
+    document.getElementById('demo4').innerHTML =
+        str.slice(7, 13); // equal to str.slice(-12, -6);
+
+    //substring() is similar to slice()
+    // The difference is that substring() cannot accept negative indexes.
+
+    //substr() is similar to slice()
+    // The difference is that the second parameter specifies the length of the extracted part.
+    // If you omit the second parameter, substr() will slice out the rest of the string.
+
+    //The replace() method replaces a specified value with another value in a string
+    document.getElementById('demo5').innerHTML =
+        str.replace("Banana", "Orange");
+    //By default, the replace() method replaces only the first match
+    //To replace case insensitive, use a regular expression with an /i flag (insensitive)
+    document.getElementById('demo6').innerHTML =
+        str.replace(/BANANA/i, "Melon");
+    //To replace all matches, use a regular expression with a /g flag (global match)
+    str = "Apple, Banana, Kiwi, Apple, Banana, Kiwi";
+    document.getElementById('demo7').innerHTML =
+        str.replace(/Banana/g, "Melon");
+
+    document.getElementById('demo8').innerHTML =
+        str.toUpperCase();
+    //A string is converted to lower case with toLowerCase()
+</script>
+
+</body>
+</html>
