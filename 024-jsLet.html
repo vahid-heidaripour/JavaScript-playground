@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Let Variable</h2>
+<p id="demo"></p>
+<p id="demo1"></p>
+
+<script>
+    var text = "";
+    let i = 3;
+    for (let i = 0; i < 5; i++) {
+        text += (i + "<br>");
+    }
+    document.getElementById('demo').innerHTML = text;
+    document.getElementById('demo1').innerHTML = i;
+
+    //NOTE: Variables defined with let are not hoisted to the top.
+</script>
+
+</body>
+</html>
