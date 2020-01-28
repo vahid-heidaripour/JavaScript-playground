@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Class</h2>
+
+<p>In this example we demonstrate a simple class definition and how to use it.</p>
+
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+
+<script>
+    class Car {
+        constructor(brand) {
+            this.carName = brand;
+        }
+
+        present() {
+            return "I have a " + this.carName;
+        }
+
+        static hello() {
+            return "Hello!";
+        }
+
+        static hello2(x) {
+            return "Hello " + x.carName;
+        }
+
+        get cName() {
+            return this.carName;
+        }
+
+        set cName(x) {
+            this.carName = x;
+        }
+    }
+
+    mycar = new Car("Ford");
+    document.getElementById('demo').innerHTML = mycar.carName;
+    document.getElementById('demo1').innerHTML = Car.hello();
+    document.getElementById('demo2').innerHTML = Car.hello2(mycar);
+
+    class Model extends Car {
+        constructor(brand, mod) {
+            super(brand);
+            this.model = mod;
+        }
+
+        show() {
+            return this.present() + ', it is a ' + this.model;
+        }
+    }
+
+    mycar2 = new Model("Ford", "Mustang");
+    document.getElementById('demo3').innerHTML = mycar2.show();
+
+    mycar3 = new Car("Ford");
+    mycar3.cName = "Volvo";
+    document.getElementById('demo4').innerHTML = mycar3.cName;
+
+    // Unlike functions, and other JavaScript declarations, class declarations are not hoisted.
+    // The syntax in classes must be written in "strict mode".
+
+</script>
+
+</body>
+</html>
